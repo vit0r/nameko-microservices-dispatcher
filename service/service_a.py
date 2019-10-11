@@ -4,10 +4,14 @@ from nameko.rpc import rpc
 
 class ServiceA:
     """ Event dispatching service. """
-    name = __name__
+    name = "service_a"
 
     dispatch = EventDispatcher()
 
     @rpc
-    def dispatching_method(self, payload):
-        self.dispatch("event_type", payload)
+    def post_message(self, payload):
+        self.dispatch("post_message", payload)
+
+    @rpc
+    def get_message(self, queue_name):
+        self.dispatch("get_message", queue_name)
