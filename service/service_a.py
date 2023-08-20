@@ -1,9 +1,10 @@
-
 from nameko.events import EventDispatcher
 from nameko.rpc import rpc
 
+
 class ServiceA:
-    """ Event dispatching service. """
+    """Event dispatching service."""
+
     name = "service_a"
 
     dispatch = EventDispatcher()
